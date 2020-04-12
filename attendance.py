@@ -8,10 +8,10 @@ class AttendanceSystem:
         self.report_generator = ReportGenerator()
 
     def mark_attendance(self, name):
-        if name in self.database_handler.db.keys():
-            name, time = self.input_handler.mark_attendance(name)
-            self.database_handler.db[name].append(time)
-            print("entry marked")
+        if  self.database_handler.check_attendance(name):
+            name, time= self.input_handler.mark_attendance(name)
+
+            self.database_handler.mark_attend(name,time)
 
         else:
             print("User not found")
@@ -22,7 +22,6 @@ class InputHandler:
     def mark_attendance(self,name):
         current_time = datetime.datetime.today()
         return name, current_time
-
 
 class DatabaseHandler:
 
@@ -37,6 +36,17 @@ class DatabaseHandler:
             print("user already exists")
         else:
             self.db[name] = []
+
+    def check_attendance(self, name):
+        if name in self.db.keys():
+            return True
+        else:
+            return False
+
+    def mark_attend(self,name,time):
+        self.db[name].append(time)
+        print('entry marked')
+
 
     def update_user(self):
         pass
