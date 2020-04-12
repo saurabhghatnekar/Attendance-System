@@ -7,4 +7,5 @@ class AttendanceSystem(object):
 
 
     def some_method():
-        superAttendanceSystem
+        print(123)
+        print(456)
