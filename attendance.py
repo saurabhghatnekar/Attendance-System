@@ -43,7 +43,7 @@ class DatabaseHandler:
         else:
             return False
 
-    def mark_attend(self,name,time):
+    def record_attendance(self,name,time):
         self.db[name].append(time)
         print('entry marked')
 
