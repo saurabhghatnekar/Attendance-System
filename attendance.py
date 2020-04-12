@@ -9,3 +9,6 @@ class AttendanceSystem(object):
     def some_method():
         print(123)
         print(456)
+
+    def feature_1():
+        pass
