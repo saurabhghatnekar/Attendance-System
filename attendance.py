@@ -4,4 +4,7 @@ class AttendanceSystem(object):
     def __init__(self, arg):
         superAttendanceSystem, self).__init__()
         self.arg = arg
-        
+
+
+    def some_method():
+        superAttendanceSystem
